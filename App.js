@@ -7,7 +7,7 @@ export default function App() {
 
 
   const goalInputHandler = enteredText => {
-    setEnteredGoal(enteredText);    
+    setEnteredGoal(enteredText);
   }
 
   const addGoalHandler = () => {
@@ -28,7 +28,11 @@ export default function App() {
 
       </View>
       <View>
-        {courseGoals.map(goal => <Text key={goal}>{goal}</Text>)}
+        {courseGoals.map(goal => (
+          <View key={goal} style={styles.listItem}>
+            <Text>{goal}</Text>
+          </View>
+        ))}
       </View>
     </View>
   );
@@ -48,6 +52,12 @@ const styles = StyleSheet.create({
     width: '80%',
     borderBottomColor: 'black',
     borderBottomWidth: 1,
-    padding: 10
+    padding: 10,
+    marginBottom: 20
+  },
+  listItem: {
+    padding: 10,
+    marginVertical: 5,
+    backgroundColor: '#ccc'
   }
 });
