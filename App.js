@@ -4,21 +4,21 @@ import { StyleSheet, Text, View, Button, TextInput, ScrollView, FlatList } from 
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
 
-export default function App() {  
+export default function App() {
   const [courseGoals, setCourseGoals] = useState([]);
 
   const addGoalHandler = goalTitle => {
-    goalInputHandler('');
     setCourseGoals(currentGoals => [
       ...currentGoals,
-      { key: Math.random().toString(), value: goalTitle }
+      { id: Math.random().toString(), value: goalTitle }
     ]);
   };
 
   return (
     <View style={styles.container}>
-      <GoalInput onAddGoal={addGoalHandler}/>
+      <GoalInput onAddGoal={addGoalHandler} />
       <FlatList
+        keyExtractor={(item, index) => item.id}
         data={courseGoals}
         renderItem={itemData => <GoalItem title={itemData.item.value} />}
       />
