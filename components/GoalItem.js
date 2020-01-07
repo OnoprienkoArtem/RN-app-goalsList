@@ -9,12 +9,12 @@ const GoalItem = props => {
     )
 }
 
-export default GoalItem;
-
-const styles = StyleSheet.create({    
+const styles = StyleSheet.create({
     listItem: {
-      padding: 10,
-      marginVertical: 5,
-      backgroundColor: '#ccc'
+        padding: 10,
+        marginVertical: 5,
+        backgroundColor: '#ccc'
     }
-  });
+});
+
+export default GoalItem;

@@ -7,11 +7,11 @@ import GoalInput from './components/GoalInput';
 export default function App() {  
   const [courseGoals, setCourseGoals] = useState([]);
 
-  const addGoalHandler = () => {
+  const addGoalHandler = goalTitle => {
     goalInputHandler('');
     setCourseGoals(currentGoals => [
       ...currentGoals,
-      { key: Math.random().toString(), value: enteredGoal }
+      { key: Math.random().toString(), value: goalTitle }
     ]);
   };
 
