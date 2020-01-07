@@ -1,18 +1,33 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native'
+import { View, StyleSheet, Button, TextInput } from 'react-native'
 
 const GoalInput = props => {
     return (
         <View style={styles.listInput}>
-            <Text>{props.title}</Text>
+            <TextInput
+                placeholder="My Goal"
+                style={styles.textInput}
+                onChangeText={goalInputHandler}
+                value={enteredGoal}
+            />
+            <Button title="ADD" onPress={addGoalHandler} />
         </View>
     )
 }
 
-export default GoalInput;
-
-const styles = StyleSheet.create({    
+const styles = StyleSheet.create({
     listInput: {
-        
-    }
-  });
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+    textInput: {
+        width: '80%',
+        borderBottomColor: 'black',
+        borderBottomWidth: 1,
+        padding: 10,
+        marginBottom: 20
+      }
+});
+
+export default GoalInput;
