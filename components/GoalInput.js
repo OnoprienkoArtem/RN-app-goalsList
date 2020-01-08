@@ -9,7 +9,7 @@ const GoalInput = props => {
     };
 
     return (
-        <Modal visible={false}>
+        <Modal visible={props.visible} animationType="slide">
             <View style={styles.listInput}>
                 <TextInput
                     placeholder="My Goal"
