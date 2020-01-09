@@ -10,7 +10,7 @@ const GoalInput = props => {
 
     return (
         <Modal visible={props.visible} animationType="slide">
-            <View style={styles.listInput}>
+            <View style={styles.inputContainer}>
                 <TextInput
                     placeholder="My Goal"
                     style={styles.textInput}
@@ -24,9 +24,9 @@ const GoalInput = props => {
 }
 
 const styles = StyleSheet.create({
-    listInput: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+    inputContainer: {
+        flex: 1,
+        justifyContent: 'center',
         alignItems: 'center'
     },
     textInput: {
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         borderBottomColor: 'black',
         borderBottomWidth: 1,
         padding: 10,
-        marginBottom: 20
+        marginBottom: 10
     }
 });
 
